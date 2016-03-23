@@ -1,13 +1,20 @@
 package formative.controller;
 
 import java.util.Scanner;
-
+/**
+ * A program the plays Rock, Paper, Scissors with the user.
+ * @author Rory Baker
+ * @version 1.0 3/23/16
+ */
 public class FormativeController
 {
 	private Scanner myInput;
 	private int wins, losses, ties;
 	private String[] RPSArray;
 	
+	/**
+	 * Constructor, instantiates all objects and primitives.
+	 */
 	public FormativeController()
 	{
 		myInput = new Scanner(System.in);
@@ -17,7 +24,12 @@ public class FormativeController
 		ties = 0;
 	}
 	
-	
+	/**
+	 * Using Scanner, takes a user's input, and tests to make sure it is one of the appropriate answers.
+	 * If the input is Rock, Paper, or Scissors, the computer chooses one at random, and the answers are compared.
+	 * Rock beats Scissors, Scissors beats Paper, and Paper beats Rock.
+	 * If the user inputs Quit. The System outputs the players wins, losses, and ties, then the program terminates.
+	 */
 	private void playGame()
 	{
 		System.out.println("Welcome to Rock, Paper, Scissors. Enter either Rock, Paper, or Scissors to play! Enter Quit to stop playing.");
@@ -71,6 +83,7 @@ public class FormativeController
 				playGame();
 			}
 		}
+		//If the input is an inappropriate word, restarts the method.
 		else
 		{
 			System.out.println("Please try again with an appropriate word.");
@@ -79,7 +92,9 @@ public class FormativeController
 	}
 	
 	
-	
+	/**
+	 * Launches the program.
+	 */
 	public void start()
 	{
 		playGame();
